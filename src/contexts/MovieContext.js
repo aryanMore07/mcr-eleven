@@ -24,14 +24,14 @@ export function MovieProvider({ children }) {
 
     const genreFilter = state.genreInput ? state.genreInput === 'All genres' ? searchFilter : searchFilter.filter((movie) => movie.genre.some((genre) => genre === state.genreInput) ? movie : null) : searchFilter;
 
-
-    // console.log(state.yearInput);
-    // console.log(state.ratingInput);
+    const yearSearch = state.yearInput ? state.yearInput === 'All years' ? genreFilter : genreFilter.filter((movie) => movie.year <= Number(state.yearInput)) : genreFilter;
+    
+    const ratingFilter = state.ratingInput ? state.ratingInput === 'All ratings' ? yearSearch : yearSearch.filter((movie) => movie.rating <= Number(state.ratingInput) ? movie : null) : yearSearch;
 
     useEffect(() => {
         localStorage.setItem('movieData', JSON.stringify(state.allMovieData));
         localStorage.setItem('wislistMovieData', JSON.stringify(state.wishlistData));
     }, [state]);
 
-    return <MovieContext.Provider value={{ state, dispatch, genreFilter }}>{children}</MovieContext.Provider>
+    return <MovieContext.Provider value={{ state, dispatch, ratingFilter }}>{children}</MovieContext.Provider>
 }

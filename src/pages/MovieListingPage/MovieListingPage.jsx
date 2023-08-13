@@ -6,23 +6,23 @@ import MovieCard from '../../components/movieCard/MovieCard';
 
 function MovieListingPage() {
 
-    const { state, dispatch, genreFilter } = useContext(MovieContext);
+    const { state, dispatch, ratingFilter } = useContext(MovieContext);
     const [genres, setGenres] = useState(['All genres']);
-    const [years, setYears] = useState([]);
+    const [years, setYears] = useState(['All years']);
 
     function isAdd(genre) { return genres.find((ele) => ele === genre) }
 
     function genreHandler(event) {
-        dispatch({type: 'GENRE_INPUT', payload: event.target.value})
-    } 
+        dispatch({ type: 'GENRE_INPUT', payload: event.target.value })
+    }
 
     function yearHandler(event) {
-        dispatch({type: 'YEAR_INPUT', payload: event.target.value})
+        dispatch({ type: 'YEAR_INPUT', payload: event.target.value })
     }
 
     function ratingHandler(event) {
-        dispatch({type: 'RATING_INPUT', payload: event.target.value})
-    } 
+        dispatch({ type: 'RATING_INPUT', payload: event.target.value })
+    }
 
     useMemo(() => {
         setYears(state.allMovieData.map(({ year }) => year))
@@ -45,15 +45,23 @@ function MovieListingPage() {
                         }
                     </select>
                     <select name='year' id="year" onChange={yearHandler}>
+                        <option value='All years'>All years</option>
                         {
                             years.map((year) => (<option value={year}>{year}</option>))
                         }
                     </select>
                     <select name='rating' id="rating" onChange={ratingHandler}>
-                        <option value={10}>less than 10</option>
-                        <option value={8}>less than 8</option>
-                        <option value={6}>less than 6</option>
-                        <option value={4}>less than 4</option>
+                        <option value='All ratings'>All ratings</option>
+                        <option value={10}>10</option>
+                        <option value={9}>9</option>
+                        <option value={8}>8</option>
+                        <option value={7}>7</option>
+                        <option value={6}>6</option>
+                        <option value={5}>5</option>
+                        <option value={4}>4</option>
+                        <option value={3}>3</option>
+                        <option value={2}>2</option>
+                        <option value={1}>1</option>
                     </select>
                 </div>
                 <div>
@@ -64,7 +72,7 @@ function MovieListingPage() {
             </div>
             <div className='movie-listing'>
                 {
-                    genreFilter.map((movie) => <MovieCard key={movie.id} movieDetails={movie} />)
+                    ratingFilter.map((movie) => <MovieCard key={movie.id} movieDetails={movie} />)
                 }
             </div>
         </div>
