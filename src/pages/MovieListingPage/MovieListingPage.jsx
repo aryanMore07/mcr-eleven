@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import './movieListtingPage.css';
 import { MovieContext } from '../../contexts/MovieContext';
 import MovieCard from '../../components/movieCard/MovieCard';
+import { useNavigate } from 'react-router';
 
 function MovieListingPage() {
 
+    const navigate = useNavigate();
     const { state, dispatch, ratingFilter } = useContext(MovieContext);
     const [genres, setGenres] = useState(['All genres']);
     const [years, setYears] = useState(['All years']);
@@ -65,13 +67,18 @@ function MovieListingPage() {
                     </select>
                 </div>
                 <div>
-                    <button className='addtowishlist'>
+                    <button className='addtowishlist' onClick={() => {
+                        navigate('/add-movie');
+                    }}>
                         Add Movie
                     </button>
                 </div>
             </div>
             <div className='movie-listing'>
-                {
+                {   
+                    ratingFilter.length === 0 ? 
+                    (<h1 style={{padding: '2rem'}}>No Movies to show</h1>)
+                    : 
                     ratingFilter.map((movie) => <MovieCard key={movie.id} movieDetails={movie} />)
                 }
             </div>

@@ -1,0 +1,81 @@
+/* Default styles for mobile devices */
+.addmovie-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100vh;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+}
+
+.input-field {
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    width: 25rem;
+    height: 10px;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .addmovie-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25auto;
+  }
+
+  .input-field {
+    font-size: 20px;
+    padding-paddingottom: 10px;
+    padding-marginottom: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    width: 25rem;
+    height: 20p1;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .addmovie-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25auto;
+  }
+
+  .input-field {
+    font-size: 20px;
+    padding-paddingottom: 10px;
+    padding-marginottom: 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    width: 25rem;
+    height: 20p1;
+  }
+}
