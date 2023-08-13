@@ -1,0 +1,93 @@
+/* Default styles for mobile devices */
+.navbar-div {
+  padding: 0px 2rem 0px 2rem;
+  background-color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  color: white;
+}
+
+.search-input {
+  text-align: center;
+  width: 15rem;
+  height: 30px;
+  font-size: 20px;
+}
+
+.navlink-element {
+  text-decoration: none;
+  margin: 0px 15px 0px 15px;
+  color: white;
+}
+
+.active {
+  font-size: 22px;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .navbar-div {
+    padding: 0px 2rem 0px 2rem;
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .heading {
+    color: white;
+  }
+
+  .search-input {
+    text-align: center;
+    width: 15rem;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .navlink-element {
+    text-decoration: none;
+    margin: 0px 15px 0px 15px;
+    color: white;
+  }
+
+  .active {
+    font-size: 22px;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .navbar-div {
+    padding: 0px 2rem 0px 2rem;
+    background-color: #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .heading {
+    color: white;
+  }
+
+  .search-input {
+    text-align: center;
+    width: 15rem;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .navlink-element {
+    text-decoration: none;
+    margin: 0px 15px 0px 15px;
+    color: white;
+  }
+
+  .active {
+    font-size: 22px;
+  }
+}

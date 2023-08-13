@@ -1,0 +1,21 @@
+/* Default styles for mobile devices */
+.wishlist-data {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .wishlist-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .wishlist-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

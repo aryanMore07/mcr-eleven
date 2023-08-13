@@ -1,0 +1,57 @@
+/* Default styles for mobile devices */
+.single-movie-div {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-movie-info {
+  padding: 15px;
+}
+
+.single-img-div {
+  height: 15rem;
+  width: 15rem;
+}
+
+/* Styles for tablets (portrait) and up */
+@media (min-width: 768px) {
+  .single-movie-div {
+    margin: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .single-movie-info {
+    padding: 15px;
+  }
+
+  .single-img-div {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+/* Styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  .single-movie-div {
+    margin: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .single-movie-info {
+    padding: 15px;
+  }
+
+  .single-img-div {
+    height: 25rem;
+    width: 25rem;
+  }
+}
