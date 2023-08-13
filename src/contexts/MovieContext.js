@@ -15,16 +15,15 @@ export function MovieProvider({ children }) {
         allMovieData: presistMovieData,
         searchInput: '',
         wishlistData: presistWishlistMovieData,
-        genreInput: 'Drama',
+        genreInput: '',
         yearInput: '',
         ratingInput: '',
     });
 
     const searchFilter = state.searchInput ? state.allMovieData.filter((movie) => movie.title.toLowerCase().includes(state.searchInput.toLowerCase()) || movie.director.toLowerCase().includes(state.searchInput.toLowerCase())) : state.allMovieData;
-    console.log(searchFilter.map((movie) => movie.genre.map((genre) => genre.toLowerCase() === state.genreInput.toLowerCase()) ? movie : null));
-    const genreFilter = state.genreInput ? searchFilter.filter((genre) => genre) : searchFilter;
-    console.log(state.genreInput);
-    console.log(genreFilter);
+
+    const genreFilter = state.genreInput ? state.genreInput === 'All genres' ? searchFilter : searchFilter.filter((movie) => movie.genre.some((genre) => genre === state.genreInput) ? movie : null) : searchFilter;
+
 
     // console.log(state.yearInput);
     // console.log(state.ratingInput);
@@ -34,5 +33,5 @@ export function MovieProvider({ children }) {
         localStorage.setItem('wislistMovieData', JSON.stringify(state.wishlistData));
     }, [state]);
 
-    return <MovieContext.Provider value={{ state, dispatch, searchFilter }}>{children}</MovieContext.Provider>
+    return <MovieContext.Provider value={{ state, dispatch, genreFilter }}>{children}</MovieContext.Provider>
 }

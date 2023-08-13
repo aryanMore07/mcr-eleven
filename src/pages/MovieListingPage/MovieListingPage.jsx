@@ -6,7 +6,7 @@ import MovieCard from '../../components/movieCard/MovieCard';
 
 function MovieListingPage() {
 
-    const { state, dispatch, searchFilter } = useContext(MovieContext);
+    const { state, dispatch, genreFilter } = useContext(MovieContext);
     const [genres, setGenres] = useState(['All genres']);
     const [years, setYears] = useState([]);
 
@@ -64,7 +64,7 @@ function MovieListingPage() {
             </div>
             <div className='movie-listing'>
                 {
-                    searchFilter.map((movie) => <MovieCard key={movie.id} movieDetails={movie} />)
+                    genreFilter.map((movie) => <MovieCard key={movie.id} movieDetails={movie} />)
                 }
             </div>
         </div>
